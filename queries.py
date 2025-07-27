@@ -42,6 +42,27 @@ def createTables(mydb):
     mydb.commit()
     cursor.close()
 
+
+def addIncome(mydb):
+    name = input("Enter income source: ")
+    amount = input("Enter amount: ")
+    try:
+        amount = int(amount)
+        if amount <= 0:
+            print("Amount must be a positive number.")
+            return
+        cursor = mydb.cursor()
+        query = """INSERT INTO income (name, amount) VALUES (%s, %s)"""
+        cursor.execute(query, (name, amount))
+        mydb.commit()
+        print("Income recorded successfully.")
+    except ValueError:
+        print("Invalid amount. Please enter a numeric value.")
+    except Exception as e:
+        print(f"Error recording income: {e}")
+
+
+
 def setBudget(mydb):
     category = input("Enter budget category (e.g. food, transport): ")
     amount = input("Enter budget amount: ")
