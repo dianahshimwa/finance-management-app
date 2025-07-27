@@ -1,3 +1,47 @@
+def createTables(mydb):
+    cursor = mydb.cursor()
+    # Create the necessary tables for the personal finance application
+    
+    # income table
+    cursor.execute(
+        """CREATE TABLE IF NOT EXISTS income (
+            id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(100),
+            amount INT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"""
+    )
+
+    # expenses table
+    cursor.execute(
+        """CREATE TABLE IF NOT EXISTS expenses (
+            id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(100),
+            amount INT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"""
+    )
+
+    # budgets table
+    cursor.execute(
+        """CREATE TABLE IF NOT EXISTS budgets (
+            id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            category VARCHAR(100),
+            amount INT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"""
+    )
+
+    # savings goals table
+    cursor.execute(
+        """CREATE TABLE IF NOT EXISTS savings_goals (
+            id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            goal_name VARCHAR(100),
+            target_amount INT,
+            target_date DATE,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"""
+    )
+
+    mydb.commit()
+    cursor.close()
+
 def setBudget(mydb):
     category = input("Enter budget category (e.g. food, transport): ")
     amount = input("Enter budget amount: ")
