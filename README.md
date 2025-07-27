@@ -65,8 +65,7 @@ Cyuzuzo Terance	             []
 Elijah Kabatsi	             []
 David Katete	             []
 +255658295950	             []
-Feel free to update GitHub usernames or contact details as needed.
 
 License
 
-This project was developed for educational purposes at African Leadership University (ALU) as part of Peer Learning Days in Trimester 2. No official license has been applied.
+This project was developed for educational purposes at African Leadership University (ALU) as part of Peer Learning Days. No official license has been applied.
