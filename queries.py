@@ -80,3 +80,25 @@ def setBudget(mydb):
         print("Invalid amount. Please enter a numeric value.")
     except Exception as e:
         print(f"Error setting budget: {e}")
+
+
+def setSavingsGoal(mydb):
+    goal_name = input("Enter savings goal name: ")
+    target_amount = input("Enter target amount: ")
+    target_date = input("Enter target date (YYYY-MM-DD): ")
+    try:
+        target_amount = int(target_amount)
+        if target_amount <= 0:
+            print("Target amount must be a positive number.")
+            return
+        cursor = mydb.cursor()
+        query = """INSERT INTO savings_goals (goal_name, target_amount, target_date) 
+                   VALUES (%s, %s, %s)"""
+        cursor.execute(query, (goal_name, target_amount, target_date))
+        mydb.commit()
+        print("Savings goal set successfully.")
+    except ValueError:
+        print("Invalid amount or date. Please enter valid values.")
+    except Exception as e:
+        print(f"Error setting savings goal: {e}")
+
