@@ -1,6 +1,8 @@
 import mysql.connector
 import os
 from dotenv import load_dotenv
+from queries import createTables
+from queries import setBudget
 
 # Load environment variables from .env file
 load_dotenv()
@@ -37,6 +39,8 @@ try:
     mydb = mysql.connector.connect(
         host=db_host, user=db_user, password=db_password, database=dbname
     )
+    # Create tables if they do not exist
+    createTables(mydb)
 except mysql.connector.Error:
     print("Failed to connect to the database, Please check your connection credentials")
     exit()
@@ -53,7 +57,7 @@ def main():
             elif choice == "2":
                 print("Adding Expense...")
             elif choice == "3":
-                print("Setting Budget...")
+                setBudget(mydb)
             elif choice == "4":
                 print("Setting Savings Goal...")
             elif choice == "5":
