@@ -118,3 +118,47 @@ def addExpense(mydb):
         print("Invalid amount. Please enter a numeric value.")
     except Exception as e:
         print(f"Error recording expense: {e}")
+
+
+
+
+
+def viewFinancialSummary(mydb):
+    cursor = mydb.cursor()
+    try:
+        cursor.execute("SELECT SUM(amount) FROM income")
+        total_income = cursor.fetchone()[0] or 0
+
+        cursor.execute("SELECT SUM(amount) FROM expenses")
+        total_expenses = cursor.fetchone()[0] or 0
+
+        cursor.execute("SELECT category, amount FROM budgets")
+        budgets = cursor.fetchall()
+
+        cursor.execute("SELECT goal_name, target_amount, target_date FROM savings_goals")
+        savings = cursor.fetchall()
+
+        net_balance = total_income - total_expenses
+
+        print("\n------ Financial Summary ------")
+        print(f"Total Income: {total_income} RWF")
+        print(f"Total Expenses: {total_expenses} RWF")
+        print(f"Net Balance: {net_balance} RWF")
+
+        print("\nBudgets:")
+        if budgets:
+            for category, amount in budgets:
+                print(f"  {category}: {amount} RWF")
+        else:
+            print("  No budgets set.")
+
+        print("\nSavings Goals:")
+        if savings:
+            for goal_name, target_amount, target_date in savings:
+                print(f"  Goal: {goal_name}, Target: {target_amount} RWF, Date: {target_date}")
+        else:
+            print("  No savings goals set.")
+    except Exception as e:
+        print(f"Error retrieving summary: {e}")
+    finally:
+        cursor.close()
