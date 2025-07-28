@@ -43,6 +43,7 @@ try:
         host=db_host, user=db_user, password=db_password, database=dbname
     )
     # Create tables if they do not exist
+    # refactoring 
     createTables(mydb)
 except mysql.connector.Error:
     print("Failed to connect to the database, Please check your connection credentials")
