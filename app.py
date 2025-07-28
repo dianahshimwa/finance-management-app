@@ -6,6 +6,7 @@ from queries import addIncome
 from queries import setBudget
 from queries import addExpense
 from queries import setSavingsGoal
+from queries import viewFinancialSummary
 
 # Load environment variables from .env file
 load_dotenv()
@@ -65,7 +66,7 @@ def main():
             elif choice == "4":
                 setSavingsGoal(mydb)
             elif choice == "5":
-                print("Viewing Financial Summary...")
+                viewFinancialSummary(mydb)
             elif choice == "6":
                 print("Exiting SAVR. Goodbye!")
                 break
