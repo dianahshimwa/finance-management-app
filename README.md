@@ -58,7 +58,7 @@ Enter the number corresponding to the action you want to perform, then follow th
 Contributors
 
 Name	                     GitHub Username / Contact
-Kabera Samuel	             [KaberaSamuel]
+Kabera Samuel	             [samuel-kabera]
 David Shumbusho	             [Shumbusho43]
 Dianah Shimwa Gasasira       [dianahshimwa]
 Cyuzuzo Terance	             [terancebana]
