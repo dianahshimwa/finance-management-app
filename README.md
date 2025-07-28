@@ -64,7 +64,7 @@ Dianah Shimwa Gasasira       [dianahshimwa]
 Cyuzuzo Terance	             [terancebana]
 Elijah Kabatsi	             [elijahkabatsi]
 David Katete	             [dkatate]
-Given Edward	             [givenedward]
+Given Edward	             [GIVENALITY]
 
 License
 
