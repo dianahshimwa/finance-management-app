@@ -64,7 +64,7 @@ Dianah Shimwa Gasasira       [dianahshimwa]
 Cyuzuzo Terance	             [terancebana]
 Elijah Kabatsi	             [elijahkabatsi]
 David Katete	             [dkatate]
-+255658295950	             []
+Given Edward	             [givenedward]
 
 License
 
