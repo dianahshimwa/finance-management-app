@@ -2,7 +2,11 @@ import mysql.connector
 import os
 from dotenv import load_dotenv
 from queries import createTables
+from queries import addIncome
 from queries import setBudget
+from queries import addExpense
+from queries import setSavingsGoal
+from queries import viewFinancialSummary
 
 # Load environment variables from .env file
 load_dotenv()
@@ -54,15 +58,15 @@ def main():
             print(menu_message)
             choice = input("Enter your choice: ").strip()
             if choice == "1":
-                print("Adding Income...")
+                addIncome(mydb)
             elif choice == "2":
-                print("Adding Expense...")
+                addExpense(mydb)
             elif choice == "3":
                 setBudget(mydb)
             elif choice == "4":
-                print("Setting Savings Goal...")
+                setSavingsGoal(mydb)
             elif choice == "5":
-                print("Viewing Financial Summary...")
+                viewFinancialSummary(mydb)
             elif choice == "6":
                 print("Exiting SAVR. Goodbye!")
                 break

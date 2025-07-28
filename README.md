@@ -62,9 +62,9 @@ Kabera Samuel	             [KaberaSamuel]
 David Shumbusho	             [Shumbusho43]
 Dianah Shimwa Gasasira       [dianahshimwa]
 Cyuzuzo Terance	             [terancebana]
-Elijah Kabatsi	             []
-David Katete	             []
-+255658295950	             []
+Elijah Kabatsi	             [elijahkabatsi]
+David Katete	             [dkatate]
+Given Edward	             [GIVENALITY]
 
 License
 
