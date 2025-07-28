@@ -61,7 +61,7 @@ Name	                     GitHub Username / Contact
 Kabera Samuel	             [KaberaSamuel]
 David Shumbusho	             [Shumbusho43]
 Dianah Shimwa Gasasira       [dianahshimwa]
-Cyuzuzo Terance	             []
+Cyuzuzo Terance	             [terancebana]
 Elijah Kabatsi	             []
 David Katete	             []
 +255658295950	             []
