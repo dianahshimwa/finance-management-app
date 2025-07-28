@@ -1,12 +1,9 @@
 import mysql.connector
 import os
 from dotenv import load_dotenv
-from queries import createTables
-from queries import addIncome
-from queries import setBudget
-from queries import addExpense
-from queries import setSavingsGoal
-from queries import viewFinancialSummary
+
+
+from queries import createTables, addExpense, addIncome, setBudget, setSavingsGoal, viewFinancialSummary
 
 # Load environment variables from .env file
 load_dotenv()
@@ -14,7 +11,6 @@ load_dotenv()
 # Access an environment variable
 dbname = os.getenv("DATABASE")
 db_host = os.getenv("HOST")
-# db_user = os.getenv("USER")
 db_user = os.getenv("DB_USER")
 db_password = os.getenv("PASSWORD")
 
@@ -44,10 +40,9 @@ try:
         host=db_host, user=db_user, password=db_password, database=dbname
     )
     # Create tables if they do not exist
-    # refactoring 
     createTables(mydb)
 except mysql.connector.Error:
-    print("Failed to connect to the database, Please check your connection credentials")
+    print("Failed to connect to the database, Please check variables in the .env file")
     exit()
 
 
